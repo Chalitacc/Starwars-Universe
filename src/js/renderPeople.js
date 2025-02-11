@@ -80,4 +80,4 @@ const renderPeople = (people) => {
 };
 
 fetchPeople();
-export default fetchPeople;
+export default renderPeople;
