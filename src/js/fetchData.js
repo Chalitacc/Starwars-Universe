@@ -1,7 +1,7 @@
 const baseUrl = "https://swapi.dev/api/";
 
 export async function fetchData(category) {
-  try {
+  /* 
     let apiURL;
 
     switch (category) {
@@ -31,11 +31,13 @@ export async function fetchData(category) {
 
       default:
         throw new Error("invalid category");
-    }
-    const response = await fetch(apiURL);
+    } */
+  try {
+    const apiUrl = baseUrl + category;
+
+    const response = await fetch(apiUrl);
 
     const data = await response.json();
-    console.log(`Fetched data for ${category}:`, data);
     return data.results;
   } catch (error) {
     console.error(`Error fetching data for ${category}:`, error);

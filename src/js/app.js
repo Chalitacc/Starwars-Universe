@@ -1,5 +1,6 @@
 import { fetchData } from "./fetchData.js";
 import renderPeople from "./renderPeople.js";
+import renderPlanets from "./renderPlanets.js";
 
 // ADDING EVENT LISTENER
 
@@ -9,12 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
     ".category-container__buttons"
   );
 
-  const renderFunction = {
-    people: renderPeople,
-  };
+  // Default
+  renderPeople();
 
   buttonContainer.addEventListener("click", async (event) => {
-    if (!event.target.classList.contains("category-container__buttons")) return;
+    console.log("koko");
+    console.log(
+      "Contains category-c-b",
+      !event.target.classList.contains("category-container__buttons")
+    );
 
     categoryButtons.forEach((button) => button.classList.remove("active"));
 
@@ -22,12 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const category = event.target.id;
 
-    const data = await fetchData(category);
+    console.log("catg in app", category);
 
-    if (renderFunction[category]) {
-      renderFunction[category](data);
+    if (category === "people") {
+      renderPeople();
+      console.log("hello2", category);
+    } else if (category === "planets") {
+      renderPlanets();
     }
   });
-
-  fetchData("people").then((data) => renderPeople(data));
 });
