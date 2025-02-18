@@ -1,4 +1,5 @@
 import { fetchData } from "./fetchData.js";
+import renderfilms from "./renderFilms.js";
 import renderPeople from "./renderPeople.js";
 import renderPlanets from "./renderPlanets.js";
 import rendervehicles from "./renderVehicles.js";
@@ -36,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
       renderPlanets();
     } else if (category === "vehicles") {
       rendervehicles();
+    } else if (category === "films") {
+      renderfilms();
     }
   });
 });
