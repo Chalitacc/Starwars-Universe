@@ -9,24 +9,11 @@ const fetchPeople = async () => {
   }));
 };
 
-// const easyImages = [
-//   "./src/assets/images/people/Luke-Skywalker.png",
-//   "./src/assets/images/people/C-3PO.png",
-//   "./src/assets/images/people/Darth-Vader.png",
-//   "./src/assets/images/people/Leia-Organa.png",
-//   "./src/assets/images/people/Owen-Lars.png",
-//   "./src/assets/images/people/Beru Whitesun lars.png",
-//   "./src/assets/images/people/R5-D4.png",
-//   "./src/assets/images/people/Biggs-Darklighter.png",
-//   "./src/assets/images/people/Obi-Wan-Kenobi.png",
-// ];
-
 // RENDER PEOPLE CARD
 
 const renderPeople = async () => {
   //selecting elements
   const cardContainer = document.querySelector(".card__container");
-  console.log("hello", cardContainer);
 
   const cardList = document.querySelector(".card__list");
 
@@ -39,7 +26,6 @@ const renderPeople = async () => {
   console.log("BEFORE RENDER", people);
 
   people.forEach((person) => {
-    const card = document.createElement("div");
     const cardImageContainer = document.createElement("div");
     const listItems = document.createElement("li");
     const itemTitle = document.createElement("h3");
@@ -59,10 +45,10 @@ const renderPeople = async () => {
     itemContent.classList.add("card__content");
 
     listItems.append(cardImageContainer, itemTitle, itemContent);
+
+    // CARD CONTENT
     cardImageContainer.append(img);
-
     itemTitle.textContent = person.name;
-
     const gender = document.createElement("p");
     gender.textContent = `Gender: ${person.gender}`;
     const height = document.createElement("p");

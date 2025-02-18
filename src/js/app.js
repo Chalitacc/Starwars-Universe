@@ -1,6 +1,7 @@
 import { fetchData } from "./fetchData.js";
 import renderPeople from "./renderPeople.js";
 import renderPlanets from "./renderPlanets.js";
+import rendervehicles from "./renderVehicles.js";
 
 // ADDING EVENT LISTENER
 
@@ -33,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("hello2", category);
     } else if (category === "planets") {
       renderPlanets();
+    } else if (category === "vehicles") {
+      rendervehicles();
     }
   });
 });

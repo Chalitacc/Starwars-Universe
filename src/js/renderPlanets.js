@@ -24,7 +24,7 @@ const renderPlanets = async () => {
   const planets = await fetchPlanets();
   console.log("BEFORE RENDER", planets);
 
-  planets.forEach((planet, i) => {
+  planets.forEach((planet) => {
     const cardImageContainer = document.createElement("div");
     const listItems = document.createElement("li");
     const itemTitle = document.createElement("h3");
@@ -44,6 +44,8 @@ const renderPlanets = async () => {
     itemContent.classList.add("card__content");
 
     listItems.append(cardImageContainer, itemTitle, itemContent);
+
+    // CARD CONTENT
 
     cardImageContainer.append(img);
     itemTitle.textContent = planet.name;
