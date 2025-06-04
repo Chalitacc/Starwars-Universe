@@ -43,4 +43,4 @@ SWAPI is occasionally down or may have invalid SSL certificate. In such cases, t
 😺 Git hub:
 https://github.com/Chalitacc/Starwars-Universe
 💻 Netlify
-https://precious-brioche-c4ca7f.netlify.app/
+https://gregarious-frangollo-c0b69b.netlify.app/ - seems it did not work properly when on Netlify
