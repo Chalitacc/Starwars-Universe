@@ -1,8 +1,6 @@
 import { fetchData } from "./fetchData";
 
 const fetchPlanets = async () => {
-  console.log("HELLO FROM PLANET");
-  console.log("Fetching Planet...");
   const rawplanetsData = await fetchData("planets");
   return rawplanetsData.map((planet) => ({
     ...planet,
@@ -22,7 +20,6 @@ const renderPlanets = async () => {
   cardList.innerHTML = "";
 
   const planets = await fetchPlanets();
-  console.log("BEFORE RENDER: Planets", planets);
 
   planets.forEach((planet) => {
     const cardImageContainer = document.createElement("div");

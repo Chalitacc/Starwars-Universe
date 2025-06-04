@@ -1,9 +1,8 @@
 import { fetchData } from "./fetchData";
 
 const fetchFilms = async () => {
-  console.log("Fetching Films...");
   const rawfilmsData = await fetchData("films");
-  console.log("debugging", rawfilmsData);
+  console.log(rawfilmsData);
 
   return rawfilmsData.map((film) => ({
     ...film,
@@ -23,7 +22,6 @@ const renderfilms = async () => {
   cardList.innerHTML = "";
 
   const films = await fetchFilms();
-  console.log("BEFORE RENDER: Films", films);
 
   films.forEach((film) => {
     const cardImageContainer = document.createElement("div");

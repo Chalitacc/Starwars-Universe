@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const category = event.target.id;
 
-    console.log("catg in app", category);
-
     if (category === "people") {
       renderPeople();
     } else if (category === "planets") {
@@ -39,9 +37,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-console.log(
-  "Checking card container:",
-  document.querySelector(".card__container")
-);
-console.log("Checking card list:", document.querySelector(".card__list"));

@@ -1,9 +1,7 @@
 import { fetchData } from "./fetchData";
 
 const fetchPeople = async () => {
-  console.log("Fetching People...");
   const rawpeopleeData = await fetchData("people");
-  console.log(rawpeopleeData);
 
   return rawpeopleeData.map((person) => ({
     ...person,
@@ -15,27 +13,13 @@ const fetchPeople = async () => {
 
 const renderPeople = async () => {
   //selecting elements
-  const cardContainer = document.querySelector(".card__container");
-  console.log("card container not found", cardContainer);
 
   const cardList = document.querySelector(".card__list");
-  if (!cardContainer || !cardList) {
-    console.error("cardContainer or cardList not found in DOM");
-    return;
-  }
-
-  console.log(cardContainer, "CARD CONTAINER");
-
-  console.log(cardList, "CARD LIST");
 
   // clear container
   cardList.innerHTML = "";
 
   const people = await fetchPeople();
-
-  console.log(people, "PEOPLE");
-
-  console.log("BEFORE RENDER: People", people);
 
   people.forEach((person) => {
     const cardImageContainer = document.createElement("div");
