@@ -51,12 +51,14 @@ const renderfilms = async () => {
     itemTitle.textContent = film.title;
     const openingCrawl = document.createElement("p");
     openingCrawl.textContent = `Opening Paragraph: ${film.opening_crawl}`;
+    const episode = document.createElement("p");
+    episode.textContent = `Episode: ${film.episode_id}`;
     const director = document.createElement("p");
     director.textContent = `Director: ${film.director}`;
     const releaseDate = document.createElement("p");
     releaseDate.textContent = `Release Date: ${film.release_date}`;
 
-    itemContent.append(openingCrawl, director, releaseDate);
+    itemContent.append(openingCrawl, episode, director, releaseDate);
 
     cardList.append(listItems);
   });

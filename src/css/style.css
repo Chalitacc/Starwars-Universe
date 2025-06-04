@@ -2,6 +2,11 @@
   font-family: Orbitron;
   src: url(../assets/fonts/Orbitron-VariableFont_wght.ttf);
 }
+
+@font-face {
+  font-family: Mulish;
+  src: url(../assets/fonts/Mulish-VariableFont_wght.ttf);
+}
 body {
   height: 100vh;
   width: 100%;
@@ -70,7 +75,7 @@ main {
 }
 
 .card__list p {
-  font-family: Orbitron;
+  font-family: Mulish;
   font-size: 1rem;
   color: black;
   margin: 0;

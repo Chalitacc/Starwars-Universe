@@ -6,7 +6,7 @@ const fetchPlanets = async () => {
   return rawvehiclesData.map((vehicle) => ({
     ...vehicle,
     image: `./src/assets/images/vehicles/${vehicle.name
-      .replace(" ", "-")
+      .replaceAll(" ", "-")
       .replace("/", "_")}.png`,
   }));
 };
@@ -23,7 +23,7 @@ const rendervehicles = async () => {
   cardList.innerHTML = "";
 
   const vehicles = await fetchPlanets();
-  console.log("BEFORE RENDER", vehicles);
+  console.log("BEFORE RENDER: vehicles", vehicles);
 
   vehicles.forEach((vehicle) => {
     const cardImageContainer = document.createElement("div");

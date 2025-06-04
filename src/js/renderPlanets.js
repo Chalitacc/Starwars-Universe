@@ -22,7 +22,7 @@ const renderPlanets = async () => {
   cardList.innerHTML = "";
 
   const planets = await fetchPlanets();
-  console.log("BEFORE RENDER", planets);
+  console.log("BEFORE RENDER: Planets", planets);
 
   planets.forEach((planet) => {
     const cardImageContainer = document.createElement("div");

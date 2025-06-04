@@ -3,6 +3,8 @@ import { fetchData } from "./fetchData";
 const fetchPeople = async () => {
   console.log("Fetching People...");
   const rawpeopleeData = await fetchData("people");
+  console.log(rawpeopleeData);
+
   return rawpeopleeData.map((person) => ({
     ...person,
     image: `./src/assets/images/people/${person.name.replaceAll(" ", "-")}.png`,
@@ -14,16 +16,26 @@ const fetchPeople = async () => {
 const renderPeople = async () => {
   //selecting elements
   const cardContainer = document.querySelector(".card__container");
+  console.log("card container not found", cardContainer);
 
   const cardList = document.querySelector(".card__list");
+  if (!cardContainer || !cardList) {
+    console.error("cardContainer or cardList not found in DOM");
+    return;
+  }
+
+  console.log(cardContainer, "CARD CONTAINER");
+
+  console.log(cardList, "CARD LIST");
 
   // clear container
-  cardContainer.innerHTML = "";
   cardList.innerHTML = "";
 
   const people = await fetchPeople();
 
-  console.log("BEFORE RENDER", people);
+  console.log(people, "PEOPLE");
+
+  console.log("BEFORE RENDER: People", people);
 
   people.forEach((person) => {
     const cardImageContainer = document.createElement("div");
@@ -38,7 +50,7 @@ const renderPeople = async () => {
     cardImageContainer.classList.add("card__image-container");
     img.classList.add("card__image");
 
-    cardContainer.append(cardList);
+    // cardContainer.append(cardList);
 
     listItems.classList.add("card__list-items");
     itemTitle.classList.add("card__title");
@@ -55,9 +67,9 @@ const renderPeople = async () => {
     height.textContent = `Height: ${person.height}`;
 
     const birthYear = document.createElement("p");
-    birthYear.textContent = `Height: ${person.birth_year}`;
+    birthYear.textContent = `Birth Year: ${person.birth_year}`;
     const eyecolor = document.createElement("p");
-    eyecolor.textContent = `Height: ${person.eye_color}`;
+    eyecolor.textContent = `Eye Color: ${person.eye_color}`;
     const hairColor = document.createElement("p");
     hairColor.textContent = `Hair Color: ${person.hair_color}`;
 

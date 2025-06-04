@@ -1,4 +1,4 @@
-import { fetchData } from "./fetchData.js";
+/* import { fetchData } from "./fetchData.js"; */
 import renderfilms from "./renderFilms.js";
 import renderPeople from "./renderPeople.js";
 import renderPlanets from "./renderPlanets.js";
@@ -11,12 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const categoryButtons = document.querySelectorAll(
     ".category-container__buttons"
   );
-
   // Default
   renderPeople();
 
   buttonContainer.addEventListener("click", async (event) => {
-    console.log("koko");
     console.log(
       "Contains category-c-b",
       !event.target.classList.contains("category-container__buttons")
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (category === "people") {
       renderPeople();
-      console.log("hello2", category);
     } else if (category === "planets") {
       renderPlanets();
     } else if (category === "vehicles") {
@@ -42,3 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+console.log(
+  "Checking card container:",
+  document.querySelector(".card__container")
+);
+console.log("Checking card list:", document.querySelector(".card__list"));
